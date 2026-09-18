@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>贪吃蛇小游戏</title>
+  <title>貪食蛇小遊戲</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center; color: #eee;
@@ -30,13 +30,13 @@
   </style>
 </head>
 <body>
-  <h1>🐍 贪吃蛇</h1>
+  <h1>🐍 貪食蛇</h1>
   <div class="score-board">
-    <div>得分: <span id="score">0</span></div>
-    <div>最高分: <span id="highScore">0</span></div>
+    <div>得分：<span id="score">0</span></div>
+    <div>最高分：<span id="highScore">0</span></div>
   </div>
   <canvas id="gameCanvas" width="400" height="400"></canvas>
-  <div class="controls">使用方向键 ↑ ↓ ← → 控制（边界可穿越）</div>
+  <div class="controls">使用方向鍵 ↑ ↓ ← → 控制（邊界可穿越）</div>
   <div class="mobile-controls">
     <div class="mobile-row"><button class="dir-btn" data-dir="up">↑</button></div>
     <div class="mobile-row">
@@ -46,9 +46,9 @@
     </div>
   </div>
   <div id="overlay" class="overlay">
-    <h2 id="overlayTitle">贪吃蛇</h2>
-    <p id="overlayMsg">按空格键或点击按钮开始游戏</p>
-    <button class="btn" id="startBtn">开始游戏</button>
+    <h2 id="overlayTitle">貪食蛇</h2>
+    <p id="overlayMsg">按空白鍵或點擊按鈕開始遊戲</p>
+    <button class="btn" id="startBtn">開始遊戲</button>
   </div>
   <script>
     const canvas = document.getElementById('gameCanvas');
@@ -109,8 +109,8 @@
     }
     function gameOver() {
       gameRunning = false; clearInterval(gameLoop);
-      overlayTitle.textContent = '游戏结束'; overlayMsg.textContent = '本局得分：' + score + ' 分';
-      startBtn.textContent = '再来一局'; overlay.classList.remove('hidden');
+      overlayTitle.textContent = '遊戲結束'; overlayMsg.textContent = '本局得分：' + score + ' 分';
+      startBtn.textContent = '再來一局'; overlay.classList.remove('hidden');
     }
     document.addEventListener('keydown', (e) => {
       if (!gameRunning && (e.code === 'Space' || e.key === ' ')) { startGame(); return; }
